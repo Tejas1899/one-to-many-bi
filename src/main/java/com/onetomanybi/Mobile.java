@@ -17,7 +17,7 @@ public class Mobile {
 	private int id;
 	private String name;
 	private double cost;
-	@OneToMany(mappedBy = "mobile",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "mobile",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<Sim> sims;
 
 	public int getId() {
