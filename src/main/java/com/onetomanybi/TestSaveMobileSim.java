@@ -15,27 +15,26 @@ public static void main(String[] args) {
 	EntityTransaction entityTransaction=entityManager.getTransaction();
 	
 	Mobile mobile=new Mobile();
-	mobile.setName("samsung");
-	mobile.setCost(50000);
+	mobile.setName("Apple");
+	mobile.setCost(70000);
 	Sim sim1=new Sim();
-	sim1.setProvider("Airtel");
-	sim1.setType("3G");
-	sim1.setImei("SKAKK5649656D");
+	sim1.setProvider("BSNL");
+	sim1.setType("4G");
+	sim1.setImei("SKIUFYGAS556D");
 	Sim sim2=new Sim();
-	sim2.setProvider("Jio");
+	sim2.setProvider("Idea");
 	sim2.setType("4G");
-	sim2.setImei("SAQIEON49656D");
+	sim2.setImei("APPAKKN49656D");
 	List<Sim> list=new ArrayList<Sim>();
 	list.add(sim2);
 	list.add(sim1);
-	mobile.setSims(list);
 	sim1.setMobile(mobile);
 	sim2.setMobile(mobile);
 	
 	entityTransaction.begin();
 	entityManager.persist(sim1);
 	entityManager.persist(sim2);
-	entityManager.persist(mobile);
+	//entityManager.persist(mobile);
 	entityTransaction.commit();
 }
 }

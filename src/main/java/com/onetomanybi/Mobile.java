@@ -2,7 +2,9 @@ package com.onetomanybi;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +17,7 @@ public class Mobile {
 	private int id;
 	private String name;
 	private double cost;
-	@OneToMany(mappedBy = "mobile")
+	@OneToMany(mappedBy = "mobile",cascade = CascadeType.ALL)
 	private List<Sim> sims;
 
 	public int getId() {
